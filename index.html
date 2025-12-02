@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تحولات المشرق العربي ووسائط التواصل الاجتماعي</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Cairo', 'Inter', 'sans-serif'] },
+          colors: {
+            primary: '#2563eb',
+            secondary: '#ef4444',
+            muted: '#94a3b8',
+            bg: '#0b1020',
+            panel: '#0f172a',
+            line: 'rgba(148,163,184,0.25)'
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(2, 6, 23, 0.55)"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family:'Cairo',sans-serif;
+      background:
+        radial-gradient(1200px circle at 10% -10%, #1e293b 0, transparent 55%),
+        radial-gradient(900px circle at 90% 0%, #0b3b9b 0, transparent 60%),
+        #070a14;
+    }
+
+    .slide { display:none; }
+    .slide.active { display:block; animation: fadeUp .45s ease; }
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(10px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    .glass{
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+      border:1px solid rgba(148,163,184,.15);
+      backdrop-filter: blur(6px);
+    }
+
+    .badge-live{
+      border:1px dashed rgba(37,99,235,.35);
+      background:rgba(37,99,235,.12);
+    }
+
+    .task-card{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:1rem;
+      padding:1.1rem; border-radius:1rem;
+    }
+    .task-left{
+      display:flex; align-items:flex-start; gap:.9rem; min-width:0;
+    }
+    .task-icon{
+      width:2.2rem; height:2.2rem; border-radius:.9rem;
+      display:grid; place-items:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      flex-shrink:0;
+    }
+    .task-text{
+      color:white; font-size:1.05rem; line-height:1.9;
+    }
+
+    .section-title{
+      display:flex; align-items:center; gap:.6rem; color:white;
+      font-size:1.5rem; font-weight:900;
+    }
+
+    .cover-image-frame{
+      height: 360px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(148,163,184,0.18);
+    }
+    @media (min-width: 1024px){
+      .cover-image-frame{ height: 460px; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
+
+  <div class="w-full max-w-6xl rounded-3xl overflow-hidden glass shadow-soft">
+
+    <!-- Header -->
+    <header class="p-6 md:p-8 bg-panel border-b border-line">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl grid place-items-center bg-blue-600/20 border border-blue-300/20">
+          <i data-lucide="presentation" class="w-6 h-6 text-blue-200"></i>
+        </div>
+        <h1 class="text-lg md:text-2xl font-extrabold text-white leading-relaxed">
+          منتدى دراسات الخليج والجزيرة العربية
+        </h1>
+      </div>
+    </header>
+
+    <main id="slides" class="p-6 md:p-10 min-h-[620px]">
+
+      <!-- Slide 1 Cover -->
+      <section class="slide active" id="cover">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+          <!-- Image Frame -->
+          <div class="relative glass rounded-2xl overflow-hidden cover-image-frame flex items-center justify-center p-4 md:p-6">
+            <img
+              src="https://scontent-doh1-1.xx.fbcdn.net/v/t39.30808-6/481461538_1052476543579531_6129341691080917337_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=EGjV1JdyGDcQ7kNvwEyakns&_nc_oc=AdlMWw0CeHAbfyClRZEv7AMPLvENC3p6ONetdVvNe5Z-3tOycGcSLJvj8bbHtMwWtpA&_nc_zt=23&_nc_ht=scontent-doh1-1.xx&_nc_gid=CKO8osOBtRgaiEoPZIAQOA&oh=00_AfhMhBGRELRMUpeLMdVcUGtN2D9IDUQpafckUa0NKW5Ipw&oe=69332A71"
+              alt="صورة المنتدى"
+              class="w-full h-full object-contain rounded-xl"
+            />
+
+            <div class="absolute top-4 right-4 flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 border border-white/20 text-white font-bold backdrop-blur">
+              <i data-lucide="megaphone" class="w-4 h-4 text-red-200"></i>
+              خطة ترويجية
+            </div>
+          </div>
+
+          <!-- Title + periods -->
+          <div class="flex flex-col justify-center text-white p-2 md:p-4">
+            <h2 class="text-3xl md:text-5xl font-black leading-snug">
+              تحولات المشرق العربي ووسائط التواصل الاجتماعي
+            </h2>
+
+            <p class="mt-3 text-xl md:text-2xl font-extrabold text-blue-200">
+              في الدورة الثانية عشرة من منتدى دراسات الخليج والجزيرة العربية
+            </p>
+
+            <div class="mt-6 h-px w-24 bg-white/20"></div>
+
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div class="glass rounded-xl p-4 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg grid place-items-center bg-red-500/15 border border-red-300/20">
+                  <i data-lucide="calendar-minus" class="w-5 h-5 text-red-200"></i>
+                </div>
+                <div class="font-extrabold text-slate-100">
+                  أولا: (قبل أسبوع من انطلاق المنتدى).
+                </div>
+              </div>
+
+              <div class="glass rounded-xl p-4 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg grid place-items-center bg-blue-500/15 border border-blue-300/20">
+                  <i data-lucide="calendar-days" class="w-5 h-5 text-blue-200"></i>
+                </div>
+                <div class="font-extrabold text-slate-100">
+                  الفترة الثانية: (فترة انعقاد المنتدى).
+                </div>
+              </div>
+
+              <div class="glass rounded-xl p-4 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg grid place-items-center bg-emerald-500/15 border border-emerald-300/20">
+                  <i data-lucide="calendar-check" class="w-5 h-5 text-emerald-200"></i>
+                </div>
+                <div class="font-extrabold text-slate-100">
+                  الفترة الثالثة: بعد المنتدى
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Slide 2 -->
+      <section class="slide">
+        <div class="section-title mb-5">
+          <i data-lucide="calendar-minus" class="w-6 h-6 text-red-200"></i>
+          أولا: (قبل أسبوع من انطلاق المنتدى).
+        </div>
+
+        <div class="grid gap-4">
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="newspaper" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">خبر قصير لموعد انطلاق المنتدى(للموقع الالكتروني، والمنصات والنشرة البريدية)</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="bar-chart-3" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">نشر إحصائيات عن عدد المشاركات ونوعية المواضيع ومقارنتها بالسابق.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="list" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">إعداد قائمة بحسابات منصات التواصل الاجتماعي للباحثين المشاركين في المنتدى</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="at-sign" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">منشن وتواصل مع الشخصيات المهمة في الخليج للمشاركة في المؤتمر</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 3 -->
+      <section class="slide">
+        <div class="section-title mb-5">
+          <i data-lucide="calendar-minus" class="w-6 h-6 text-red-200"></i>
+          أولا: (قبل أسبوع من انطلاق المنتدى).
+        </div>
+
+        <div class="grid gap-4">
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="video" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">مقطع فيديو دعائي عن قرب انطلاق منتدى دراسات الخليج</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="quote" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">نشر تصاميم اقتباسات من ملخصات أهم الأوراق المقدمة للمنتدى.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="link-2" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">لعل من المفيد إلى جانب المنتدى أن يتم النشر والترويج لإنتاج وحدة منتدى دراسات الخليج للترابط بينهما.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="id-card" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">تصميم بطاقة تعريفيه بالمنتدى وأهم المواضيع التي يتناولها، وتعميمها عبر منصات التواصل، والنشرة البريدية.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4 -->
+      <section class="slide">
+        <div class="section-title mb-5">
+          <i data-lucide="calendar-minus" class="w-6 h-6 text-red-200"></i>
+          أولا: (قبل أسبوع من انطلاق المنتدى).
+        </div>
+
+        <div class="grid gap-4">
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="book-open" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">الترويج لإصدارات المركز العربي التي تحولات المشرق العربي ووسائط التواصل الاجتماعي</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="layout-template" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">نشر بطاقات لكل جلسة، تتضمن عنوان الجلسة والباحثين المشاركين بها وموعد انطلاقها.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="image" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">تغيير أغلفة منصات التواصل الاجتماعي، وإعداد تصميم خاص بها يشمل عنوان المنتدى، وموعد انطلاقه.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 5 -->
+      <section class="slide">
+        <div class="section-title mb-5">
+          <i data-lucide="calendar-minus" class="w-6 h-6 text-red-200"></i>
+          أولا: (قبل أسبوع من انطلاق المنتدى).
+        </div>
+
+        <div class="grid gap-4">
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="send" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">نشر دعوة حضور المنتدى عبر منصات التواصل الاجتماعي، والإشارة بعملية البث المباشر لجلسات المنتدى عبر المنصات.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="clipboard-check" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">إعلان فتح الباب للتسجيل للحضور [إذا كان ذلك ضمن برنامج المنتدى].</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="handshake" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">التنسيق مع المؤسسات المهتمة تحولات المشرق العربي ووسائط التواصل الاجتماعي ، لمشاركة الدعوة الإلكترونية وفيديو البث المباشر.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="table-2" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">إعداد جدول عربي إنجليزي بجميع المنشورات التي ستنزل أيام المنتدى، وتوزيع المهام بشكل جاد وصارم.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 6 -->
+      <section class="slide">
+        <div class="section-title mb-5">
+          <i data-lucide="calendar-days" class="w-6 h-6 text-blue-200"></i>
+          الفترة الثانية: (فترة انعقاد المنتدى).
+        </div>
+
+        <div class="grid gap-4">
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="camera" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">صورة أو فيديو افتتاحي لإبراز اللحظات الأولى قبل أو بعد انطلاق المنتدى.</p>
+            </div>
+            <span class="badge-live px-3 py-1 rounded-full text-blue-100 font-bold text-sm">خلال فترة انعقاد المنتدى</span>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="newspaper" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">خبر انطلاق أعمال المنتدى وجلسات اليوم الأول والثاني</p>
+            </div>
+            <span class="badge-live px-3 py-1 rounded-full text-blue-100 font-bold text-sm">خلال فترة انعقاد المنتدى</span>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="twitter" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">نشر مجموعة من التغريدات والبوستات، مرفقة بصور بدقة جيدة للمشاركين (عربي/انجليزي).</p>
+            </div>
+            <span class="badge-live px-3 py-1 rounded-full text-blue-100 font-bold text-sm">خلال فترة انعقاد المنتدى</span>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="instagram" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">نشر Stories  وريلز تتضمن تصاميم متحركة، وفيديوهات من جلسات المنتدى مع رابط الإحالة إلى البث المباشر عبر يوتيوب.</p>
+            </div>
+            <span class="badge-live px-3 py-1 rounded-full text-blue-100 font-bold text-sm">خلال فترة انعقاد المنتدى</span>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="mic-2" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">تسجيلات لايف أو مقاطع فيديو مسجلة مع المتحدثين بين الجلسات حول أوراقهم البحثية.</p>
+            </div>
+            <span class="badge-live px-3 py-1 rounded-full text-blue-100 font-bold text-sm">خلال فترة انعقاد المنتدى</span>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="radio" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">نشر تنبيه للمتابعين ببدء البث المباشر عبر منصات التواصل.</p>
+            </div>
+            <span class="badge-live px-3 py-1 rounded-full text-blue-100 font-bold text-sm">خلال فترة انعقاد المنتدى</span>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="video" class="w-5 h-5 text-blue-200"></i></div>
+              <p class="task-text">نشر الفيديوهات التي تم تسجيلها مع الباحثين والنشطاء</p>
+            </div>
+            <span class="badge-live px-3 py-1 rounded-full text-blue-100 font-bold text-sm">خلال فترة انعقاد المنتدى</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7 -->
+      <section class="slide">
+        <div class="section-title mb-5">
+          <i data-lucide="calendar-check" class="w-6 h-6 text-emerald-200"></i>
+          الفترة الثالثة: بعد المنتدى
+        </div>
+
+        <div class="grid gap-4">
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="upload" class="w-5 h-5 text-emerald-200"></i></div>
+              <p class="task-text">رفع المواد البصرية التي لم تبث مباشرة على السوشيل ميديا [إن وجدت]</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="list" class="w-5 h-5 text-emerald-200"></i></div>
+              <p class="task-text">تنظيم جميع الفيديوهات في قوائم تشغيل تحت اسم المنتدى.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="layers" class="w-5 h-5 text-emerald-200"></i></div>
+              <p class="task-text">إزالة الكافرات.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="line-chart" class="w-5 h-5 text-emerald-200"></i></div>
+              <p class="task-text">إعداد تقرير عن إحصائيات المشاهدة والوصول إلى فيديوهات ومنشورات المنتدى.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="map" class="w-5 h-5 text-emerald-200"></i></div>
+              <p class="task-text">إعداد خطة للترويج لمواد المنتدى في قادم الأيام.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="scan" class="w-5 h-5 text-emerald-200"></i></div>
+              <p class="task-text">مراجعة الفيديوهات والصور بعد ارسالها من الشركة.</p>
+            </div>
+          </div>
+
+          <div class="glass task-card">
+            <div class="task-left">
+              <div class="task-icon"><i data-lucide="archive" class="w-5 h-5 text-emerald-200"></i></div>
+              <p class="task-text">أرشفتها بالشكل المتفق عليه.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 glass rounded-2xl p-6 text-center text-white text-2xl font-black flex items-center justify-center gap-2">
+          <i data-lucide="check-circle-2" class="w-7 h-7 text-emerald-200"></i>
+          الخاتمة
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Controls -->
+    <footer class="px-5 py-4 bg-panel border-t border-line flex items-center justify-between">
+      <button id="prev"
+        class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-white font-bold disabled:opacity-40 disabled:cursor-not-allowed transition flex items-center gap-2">
+        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+        السابق
+      </button>
+
+      <span id="counter" class="text-sm font-bold text-slate-200">شريحة 1 من 7</span>
+
+      <button id="next"
+        class="px-4 py-2 rounded-xl bg-primary hover:bg-blue-700 text-white font-bold transition disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2">
+        التالي
+        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+      </button>
+    </footer>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const counter = document.getElementById('counter');
+    let i = 0;
+
+    function render(){
+      slides.forEach((s,idx)=>s.classList.toggle('active', idx===i));
+      prev.disabled = i===0;
+      next.disabled = i===slides.length-1;
+      counter.textContent = `شريحة ${i+1} من ${slides.length}`;
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    next.onclick=()=>{ if(i<slides.length-1){ i++; render(); } };
+    prev.onclick=()=>{ if(i>0){ i--; render(); } };
+
+    render();
+  </script>
+
+</body>
+</html>
